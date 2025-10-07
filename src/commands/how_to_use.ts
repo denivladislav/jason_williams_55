@@ -23,19 +23,17 @@ const how_to_use = () => async (ctx: Context) => {
     const helpMessage = `
 🤖 *Помощь по боту*
 
-Помощь по боту
-
-Вы можете создавать опросы с помощью команды /start_poll.
+Вы можете создавать опросы с помощью команды /start\\_poll.
 
 Использование:
-/start_poll Вопрос | Вариант 1 | Вариант 2 | ...
+/start\\_poll Вопрос | Вариант 1 | Вариант 2 | ...
 
 Создать опрос с вариантами по умолчанию:
-/start_poll Го в баскет? | В пн | Во вт | В среду
+/start\\_poll Го в баскет? | В пн | Во вт | В среду
 Итог: В пн, Во вт, В среду, ${defaultOptsDisplay}
 
 Создать опрос без вариантов по умолчанию:
-/start_poll Го в баскет? | В пн | Во вт --no-defaults
+/start\\_poll Го в баскет? | В пн | Во вт --no-defaults
 Итог: только В пн, Во вт
 
 Текущие настройки:
@@ -50,8 +48,8 @@ const how_to_use = () => async (ctx: Context) => {
     await ctx.replyWithMarkdownV2(helpMessage, { parse_mode: 'Markdown' });
 
   } catch (err) {
-    console.error('Error running help:', err);
-    await ctx.reply('⚠️ Failed to run help. Check bot logs for details.');
+    console.error('Error running how_to_use:', err);
+    await ctx.reply('⚠️ Failed to run how_to_use. Check bot logs for details.');
   }
 };
 
